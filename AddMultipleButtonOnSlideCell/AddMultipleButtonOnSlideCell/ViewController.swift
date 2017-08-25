@@ -59,18 +59,6 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
 
 }
 
-//--------------- method for creating cell -------------
-func getCell(_ label: UILabel) -> UITableViewCell{
-    var cell : UIView = label
-    while !(cell is CellDataClass) {
-        if let super_view = cell.superview {
-            cell = super_view
-        }else{}
-    }
-    guard let tableCell = cell as? CellDataClass else {fatalError()}
-    return tableCell
-}
-
 //============ Class for cell ================
 class CellDataClass: UITableViewCell {
     @IBOutlet weak var cellDataLabel: UILabel!
